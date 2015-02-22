@@ -4,6 +4,9 @@
 ## Limitation 2: The function does not evalue if the actual value of the given matrix or calculated inverse of the matrix is the same to the previous ones. 
 ## To take advantage of reading computed results from the cache, 
 ## the output of makeCacheMatrix() needs to be captured and re-entered in cacheSolve with the same variable (cache) name everytime. 
+## Re-running the makeCacheMatrix() function will overwrite the previous cache. 
+## And the calculation will be re-done when feeding the list generated from re-running of makeCacheMatrix() to cacheSolve() 
+## even if you use the same variable name as before. 
 
 makeCacheMatrix <- function(x=matrix()) {
         ## This function creats a special matrix object that can cache its inverse.
