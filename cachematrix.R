@@ -1,7 +1,9 @@
 ## The two functions below work together to cache the inverse of a matrix and retrieve it when needed later. 
 
 ## Limitation 1: Assumed the input matrix is invertible. 
-## Limitation 2: The function does not evalue if the actual value of the given matrix or calculated inverse of the matrix is the same to the previous ones. To take advantage of reading computed results from the cache, the output of makeCacheMatrix() needs to be captured and re-entered in cacheSolve with the same variable (cache) name everytime. 
+## Limitation 2: The function does not evalue if the actual value of the given matrix or calculated inverse of the matrix is the same to the previous ones. 
+## To take advantage of reading computed results from the cache, 
+## the output of makeCacheMatrix() needs to be captured and re-entered in cacheSolve with the same variable (cache) name everytime. 
 
 makeCacheMatrix <- function(x=matrix()) {
         ## This function creats a special matrix object that can cache its inverse.
@@ -37,12 +39,12 @@ makeCacheMatrix <- function(x=matrix()) {
 
 
 cacheSolve <- function(x, ...) {
-		## This function is to computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
-		## If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
+	## This function is to computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+	## If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
         
-		## x is the list returned from makeCacheMatrix.
+	## x is the list returned from makeCacheMatrix.
         
-		## Returns the inverse matrix cached or newly computed if the matrix has been changed.
+	## Returns the inverse matrix cached or newly computed if the matrix has been changed.
         
         ## assign the value of inverse matrix from cache to the predefined variable
         m <- x$getInv()
